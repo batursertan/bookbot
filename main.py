@@ -8,9 +8,9 @@ def main():
 
     letter_count_dict = create_letter_count_dict(frank_text)
 
-    print(letter_count_dict)     
+    
 
-
+    print_report(frank_text, letter_count_dict)
 
 
 
@@ -37,6 +37,20 @@ def create_letter_count_dict(text):
             l_dict[char] = 1
     return l_dict
     
+
+def print_report(text, dict):
+    print("--------------report begin------------")                                                                                                     
+    print(f"This text consist of {get_num_words(text)} number of words")
+    for char in dict:
+        if char.isalpha() == False:
+            continue
+        count = dict[char]
+        print(f"Character {char} was found {count} times")
+    print("--------------report end----------------")
+
+
+
+
 
 
 
